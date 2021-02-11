@@ -48,7 +48,7 @@ const showData = songs => {
 			<div class="col-md-9">
 				<h3 class="lyrics-name">${title}</h3>
 					<p class="author lead">Album by <span>${artist}</span></p>
-					<audio controls>
+					<audio class = "col-md-12" controls>
 						<source src = "${preview}" type ="audio/mpeg">
 					</audio>
 				</div>
