@@ -52,7 +52,7 @@ const showData = songs => {
 						<source src = "${preview}" type ="audio/mpeg">
 					</audio>
 				</div>
-				<divclass="col-md-3 text-md-right text-center">
+				<div class="col-md-3 align-items-center text-md-right text-center">
 				<button id = "${songId}" class="btn btn-success">Get Lyrics</button>
 			</div>
 		`;
