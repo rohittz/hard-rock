@@ -1,6 +1,6 @@
 let searchBtn = document.getElementById("searchBtn");
 let searchBox = document.getElementById("searchBox");
-let searchUrl = "https://api.lyrics.ovh/suggest/";
+let searchUrl = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 let searchLyricsUrl = "https://api.lyrics.ovh/v1/";
 let songContainerDiv = document.getElementById("song-container");
 const errorMessage = (message) => {
@@ -66,7 +66,14 @@ const showData = songs => {
 }
 const searchSong = () =>{
 	const searchKeyword = searchBox.value;
-	fetch(`${searchUrl}${searchKeyword}`)
+	const parameter = searchKeyword.replace(" ", "%20");
+	fetch(`${searchUrl}${parameter}`, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": "6ebf92fd13mshb5c3b5e6147b843p10e376jsn99f408ae1ce5",
+			"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+		}
+	})
 		.then(raw => raw.json())
 		.then(data => showData(data.data))
 		.catch(error => errorMessage("API Error"));
